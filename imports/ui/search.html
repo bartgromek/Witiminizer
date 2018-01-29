@@ -1,0 +1,16 @@
+<template name="search">
+    <ul>
+        <div class="row my-row top-row my-input">
+            {{> EasySearch.Input noDocumentsOnEmpty=true event=enter index=symptomIndex
+                    attributes=searchAttributes}}
+        </div>
+        {{ hideBar }}
+        <div class = "row my-row sec-row" id="foundSymptoms">
+            {{ searchCount }}
+        </div>
+        {{#EasySearch.Each index=symptomIndex}}
+            <li class="row symptom-name">{{name}}</li>
+        {{/EasySearch.Each}}
+    </ul>
+</template>
+

@@ -1,0 +1,21 @@
+<template name="chosenSymptom">
+    <ul>
+        <div class="row my-row sec-row" id="chosen-symptom">
+           {{ symptom }}
+        </div>
+        <div class="row my-row" id="show-causes">
+            Possible Causes (possibility rate)
+        </div>
+        <div class="possible-causes">
+            {{#each possibleCauses}}
+                {{> possibleCause}}
+            {{/each}}
+        </div>
+        <div class="row my-row sec-row">
+            These might help:
+        </div>
+        {{#each curingMedicine}}
+            {{> treatment}}
+        {{/each}}
+    </ul>
+</template>

@@ -1,0 +1,1 @@
+mongoimport --host=localhost:3000 -d herbs -c herbs --type csv --file data/data --headerline

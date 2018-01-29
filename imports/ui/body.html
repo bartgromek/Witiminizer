@@ -1,0 +1,22 @@
+<body>
+
+<div class="container">
+    <header class="row my-row top-row">
+        <h1 id="main-header">Cure Yourself</h1>
+    </header>
+    {{#unless ifSearch}}
+        <div class="row my-row back-to-main">
+            BACK
+        </div>
+    {{/unless}}
+    {{#if ifSearch}}
+        {{> search}}
+    {{/if}}
+    {{#unless ifSearch}}
+        {{> chosenSymptom }}
+    {{/unless}}
+
+</div>
+
+</body>
+

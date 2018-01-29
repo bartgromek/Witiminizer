@@ -1,0 +1,21 @@
+import subprocess
+import sys
+
+path_to_mongoimport = "/usr/local/Cellar/mongodb/3.6.1/bin/mongoimport"
+host = "--host localhost:3001"
+type = "--type csv"
+modes = "--mode merge --upsertFields "
+
+def load_data(database, collection, file_name, unique_id):
+    command = path_to_mongoimport + " " + host + " " + "-d " + database + " -c " + collection + " " + \
+    type + " --file " + "../data/" + file_name + " --headerline " + modes + unique_id
+    print(command)
+    subprocess.Popen(command.split())
+
+if __name__ == "__main__":
+    database = sys.argv[1]
+    collection = sys.argv[2]
+    file_name = sys.argv[3]
+    unique_id = sys.argv[4]
+    print(unique_id)
+    load_data(database, collection, file_name, unique_id)
